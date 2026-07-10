@@ -1,0 +1,225 @@
+:root {
+  --purple-100: hsl(254, 88%, 90%);
+  --purple-500: hsl(256, 67%, 59%);
+  --yellow-100: hsl(31, 66%, 93%);
+  --yellow-500: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  background-color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+p {
+  font-weight: 400;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.card {
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  background-color: var(--purple-500);
+  color: var(--white);
+  text-align: center;
+  align-items: center;
+}
+
+.hero .highlight {
+  color: var(--yellow-500);
+  font-style: italic;
+}
+
+.hero .stars {
+  margin: 1rem 0 0.5rem;
+}
+
+.platforms {
+  background-color: var(--white);
+}
+
+.platforms img {
+  margin-bottom: 1.5rem;
+}
+
+.schedule {
+  background-color: var(--yellow-500);
+  color: var(--black);
+}
+
+.schedule img {
+  margin-top: 1rem;
+}
+
+.schedule-post {
+  background-color: var(--white);
+}
+
+.schedule-post img {
+  margin: 1rem 0;
+}
+
+.schedule-post p {
+  color: hsl(0, 0%, 40%);
+}
+
+.growth {
+  background-color: var(--purple-500);
+  color: var(--white);
+  text-align: center;
+  align-items: center;
+}
+
+.audience {
+  background-color: var(--white);
+  text-align: center;
+  align-items: center;
+}
+
+.audience .stat {
+  font-size: 4rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.audience p {
+  margin-bottom: 1rem;
+}
+
+.create {
+  background-color: var(--yellow-100);
+  color: var(--black);
+}
+
+.create em {
+  color: var(--purple-500);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.create img {
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.ai-content {
+  background-color: var(--yellow-500);
+  color: var(--black);
+}
+
+.ai-content img {
+  margin-top: auto;
+  align-self: center;
+}
+
+.attribution {
+  margin-top: 2rem;
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 3rem;
+    /* max-height: 100vh; */
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 3fr 2fr 2fr;
+    gap: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .hero {
+    grid-column: 2 / 4;
+    grid-row: 1;
+    padding: 3rem;
+  }
+
+  .platforms {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .schedule {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .schedule-post {
+    grid-column: 4;
+    grid-row: 1 / 3;
+  }
+
+  .growth {
+    grid-column: 3 / 5;
+    grid-row: 3;
+    padding: 3rem;
+  }
+
+  .audience {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .create {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .ai-content {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
