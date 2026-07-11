@@ -5,6 +5,7 @@
   --yellow-500: hsl(39, 100%, 71%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 7%);
+  --purple-400: #DDD1FC;
 }
 
 * {
@@ -13,28 +14,38 @@
   box-sizing: border-box;
 }
 
+/* ── 1. Body ── */
 body {
   font-family: 'DM Sans', sans-serif;
   font-size: 18px;
   background-color: var(--white);
-  padding: 2rem 1rem;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 3rem;
 }
 
+/* ── 4. Images ── */
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
-  object-fit: contain;
 }
 
+/* ── 5. Clamp ── */
 h1 {
-  font-size: clamp(1.8rem, 2.5vw, 3rem);
-  line-height: 1;
+  /* font-size: clamp(2.6rem, 5vw, 3.8rem); */
+  font-size: clamp(1.9rem, 2vw, 2rem);
+  line-height: .95;
   font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: clamp(1.2rem, 1.8vw, 2rem);
+  font-size: clamp(1.5rem, 2vw, 2rem);
   font-weight: 500;
   line-height: 1.2;
 }
@@ -43,28 +54,34 @@ p {
   font-weight: 400;
 }
 
+/* ── 2. Grid (mobile: 1 col) ── */
 .grid {
+  width: min(1120px, 100%);
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  width: 100%;
-  max-width: 1440px;
 }
 
+/* ── 3. Cards ── */
 .card {
-  border-radius: 1.5rem;
-  padding: 2rem;
+  padding: 1.8rem;
+  border-radius: 1rem;
+
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+
+  box-shadow: 0 12px 20px rgb(0 0 0 / .08);
 }
 
+/* ── 6. Hero ── */
 .hero {
   background-color: var(--purple-500);
   color: var(--white);
   text-align: center;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem;
 }
 
 .hero .highlight {
@@ -76,46 +93,58 @@ p {
   margin: 1rem 0 0.5rem;
 }
 
+/* ── 9. Platforms ── */
 .platforms {
   background-color: var(--white);
+  justify-content: space-between;
 }
 
 .platforms img {
   margin-bottom: 1.5rem;
 }
 
+/* ── 8. Schedule ── */
 .schedule {
   background-color: var(--yellow-500);
   color: var(--black);
+  overflow: hidden;
 }
 
 .schedule img {
-  margin-top: 1rem;
+  margin-top: auto;
+  width: 100%;
 }
 
+/* ── 7. Schedule Post ── */
 .schedule-post {
-  background-color: var(--white);
+  background-color: var(--purple-400);
+  overflow: hidden;
 }
 
 .schedule-post img {
-  margin: 1rem 0;
+  width: 100%;
+  transform: translateX(28%);
 }
 
 .schedule-post p {
   color: hsl(0, 0%, 40%);
 }
 
+/* ── 11. Growth ── */
 .growth {
   background-color: var(--purple-500);
   color: var(--white);
-  text-align: center;
+  flex-direction: row;
   align-items: center;
+  gap: 2rem;
+  text-align: left;
 }
 
+/* ── 10. Audience ── */
 .audience {
   background-color: var(--white);
   text-align: center;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .audience .stat {
@@ -128,9 +157,11 @@ p {
   margin-bottom: 1rem;
 }
 
+/* ── 12. Create ── */
 .create {
   background-color: var(--yellow-100);
   color: var(--black);
+  justify-content: space-between;
 }
 
 .create em {
@@ -144,9 +175,11 @@ p {
   align-self: flex-end;
 }
 
+/* ── 13. AI Content ── */
 .ai-content {
   background-color: var(--yellow-500);
   color: var(--black);
+  justify-content: space-between;
 }
 
 .ai-content img {
@@ -164,26 +197,35 @@ p {
   color: hsl(228, 45%, 44%);
 }
 
+/* ═══════════════════════════════════════
+   DESKTOP
+   ═══════════════════════════════════════ */
 @media (min-width: 768px) {
-  body {
-    padding: 3rem;
+  body{
+    display: block;
   }
 
+  .growth img {
+    width: 225px;
+  }
+  /* ── 2. Grid desktop ── */
   .grid {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
     gap: 1.5rem;
+    aspect-ratio: 16 / 11;
   }
 
+  /* ── 14. Positions ── */
   .create {
     grid-column: 1 / 4;
     grid-row: 1 / 8;
   }
 
   .hero {
+
     grid-column: 4 / 10;
     grid-row: 1 / 5;
-    padding: 3rem;
   }
 
   .schedule-post {
